@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap');
+
+html, body, .sidenav-container, .content-wrapper, mat-toolbar, mat-nav-list, mat-nav-list a, mat-nav-list a span, .user-panel-content {
+  font-family: 'Vazirmatn', Tahoma, Arial, sans-serif !important;
+}
+
+
+.panel-title {
+  text-align: center;
+  width: 100%;
+}
+
+.panel-title span {
+  text-align: center;
+  width: 100%;
+}
+
+.nav-container {
+  height: 100%;
+  background: linear-gradient(180deg, #2c3e50 0%, #1a252f 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+  padding: 16px 0;
+}
+
+.nav-header {
+  padding: 0 24px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 16px;
+}
+
+.nav-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #48fdc3;
+  margin: 0;
+  text-align: center;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.nav-item {
+  margin: 4px 0;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.nav-link.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #00ffd0;
+  border-right: 3px solid #00f2ff;
+}
+
+.nav-icon {
+  margin-left: 12px;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00ffe5;
+  transition: all 0.2s ease;
+}
+
+.nav-text {
+  flex: 1;
+}
+
+.nav-footer {
+  padding: 16px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: auto;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-left: 12px;
+  background-color: #00d5ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a252f;
+  font-weight: 600;
+}
+
+.user-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.logout-button {
+  margin-top: 12px;
+  width: 100%;
+  padding: 8px;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.logout-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.logout-icon {
+  font-size: 18px;
+  font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+
+}
+
+.nav-link:hover .nav-icon {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+
+

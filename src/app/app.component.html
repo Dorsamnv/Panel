@@ -1,0 +1,12 @@
+<div class="app-container">
+  <aside class="sidenav" [class.open]="isOpen">
+    <app-nav-bar></app-nav-bar>
+  </aside>
+  <div class="main-content" [class.sidenav-open]="isOpen">
+    <app-toolbar (menuToggle)="toggleSidenav()"></app-toolbar>
+    <div class="content-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+    <app-user-list></app-user-list>
+  </div>
+</div>
