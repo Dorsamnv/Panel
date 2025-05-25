@@ -1,9 +1,9 @@
 <div class="app-container">
-  <aside class="sidenav" [class.open]="isOpen">
-    <app-nav-bar></app-nav-bar>
+  <aside class="sidenav" [class.open]="!isCollapsed">
+    <app-nav-bar [isCollapsed]="isCollapsed"></app-nav-bar>
   </aside>
-  <div class="main-content" [class.sidenav-open]="isOpen">
-    <app-toolbar (menuToggle)="toggleSidenav()"></app-toolbar>
+  <div class="main-content" [class.sidenav-open]="!isCollapsed">
+    <app-toolbar [isCollapsed]="isCollapsed" (menuToggle)="toggleSidenav()"></app-toolbar>
     <div class="content-wrapper">
       <router-outlet></router-outlet>
     </div>

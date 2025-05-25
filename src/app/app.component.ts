@@ -12,9 +12,9 @@ import { UserListComponent } from "./user-list/user-list.component";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  isOpen = true;
+  isCollapsed = true;
 
   toggleSidenav() {
-    this.isOpen = !this.isOpen;
+    this.isCollapsed = !this.isCollapsed;
   }
 }

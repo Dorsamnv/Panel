@@ -1,6 +1,6 @@
 <header class="toolbar">
-  <button class="menu-button" (click)="menuToggle.emit()">
-    <span class="material-icons menu-icon">menu</span>
+  <button class="menu-button" (click)="toggleSidebar()">
+    <span class="material-icons menu-icon">{{isCollapsed ? 'menu' : 'menu'}}</span>
   </button>
   <h1 class="panel-title">پنل مدیریت</h1>
 </header>

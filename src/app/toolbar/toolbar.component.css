@@ -58,7 +58,7 @@ html, body, .sidenav-container, .content-wrapper, mat-toolbar, mat-nav-list, mat
 
 .panel-title::after {
   content: '';
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 50%;
   width: 1px;

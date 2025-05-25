@@ -1,38 +1,73 @@
-<div class="nav-container">
-  <div class="nav-header">
-    <h1 class="nav-title">پنل مدیریت</h1>
-  </div>
-  
-  <ul class="nav-list">
-    <li class="nav-item">
-      <a routerLink="/dashboard" routerLinkActive="active" class="nav-link">
-        <span class="nav-icon material-icons">dashboard</span>
-        <span class="nav-text">داشبورد</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a routerLink="/users" routerLinkActive="active" class="nav-link">
-        <span class="nav-icon material-icons">people</span>
-        <span class="nav-text">کاربران</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a routerLink="/settings" routerLinkActive="active" class="nav-link">
-        <span class="nav-icon material-icons">settings</span>
-        <span class="nav-text">تنظیمات</span>
-      </a>
-    </li>
-  </ul>
-
-  <div class="nav-footer">
-    <div class="user-info">
-      <div class="user-avatar">A</div>
-      <span class="user-name">مدیر سیستم</span>
+<div class="sidenav" [ngClass]="{'expanded': !isCollapsed}">
+    
+    <div class="sidenav-header">
+      <h2>پنل مدیریت</h2>
     </div>
-    <button class="logout-button">
-      <span class="nav-icon material-icons">logout</span>
-      <span>خروج</span>
-    </button>
-  </div>
+    <div class="sidenav-content">
+      <ul>
+        <li>
+          <a routerLink="/dashboard" routerLinkActive="active">
+            <mat-icon>dashboard</mat-icon>
+            <span>داشبورد</span>
+          </a>
+        </li>
+        
+        <!-- Users with submenu -->
+        <li>
+          <a class="nav-link-toggle" (click)="toggleSubmenu('users')" [class.active]="openedSubmenu === 'users'">
+            <mat-icon>people</mat-icon>
+            <span>کاربران</span>
+            <mat-icon class="menu-arrow" *ngIf="!isCollapsed">{{ openedSubmenu === 'users' ? 'expand_less' : 'expand_more'}}</mat-icon>
+          </a>
+          <ul class="submenu" *ngIf="openedSubmenu === 'users'">
+            <li>
+              <a routerLink="/users/list" routerLinkActive="active">
+                <mat-icon>list</mat-icon>
+                <span>لیست کاربران</span>
+              </a>
+            </li>
+            <li>
+              <a routerLink="/users/add" routerLinkActive="active">
+                <mat-icon>person_add</mat-icon>
+                <span>افزودن کاربر</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        
+        <!-- Settings with submenu -->
+        <li>
+          <a class="nav-link-toggle" (click)="toggleSubmenu('settings')" [class.active]="openedSubmenu === 'settings'">
+            <mat-icon>settings</mat-icon>
+            <span>تنظیمات</span>
+            <mat-icon class="menu-arrow" *ngIf="!isCollapsed">{{ openedSubmenu === 'settings' ? 'expand_less' : 'expand_more'}}</mat-icon>
+          </a>
+          <ul class="submenu" *ngIf="openedSubmenu === 'settings'">
+            <li>
+              <a routerLink="/settings/general" routerLinkActive="active">
+                <mat-icon>tune</mat-icon>
+                <span>تنظیمات عمومی</span>
+              </a>
+            </li>
+            <li>
+              <a routerLink="/settings/profile" routerLinkActive="active">
+                <mat-icon>account_circle</mat-icon>
+                <span>پروفایل</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="sidenav-footer">
+      <div class="user-info">
+        <div class="avatar">A</div>
+        <span>مدیر سیستم</span>
+      </div>
+      <button class="logout-btn">
+        <mat-icon>logout</mat-icon>
+        <span>خروج</span>
+      </button>
+    </div>
 </div>
   

@@ -1,155 +1,204 @@
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap');
-
-html, body, .sidenav-container, .content-wrapper, mat-toolbar, mat-nav-list, mat-nav-list a, mat-nav-list a span, .user-panel-content {
-  font-family: 'Vazirmatn', Tahoma, Arial, sans-serif !important;
-}
-
-
-.panel-title {
-  text-align: center;
-  width: 100%;
-}
-
-.panel-title span {
-  text-align: center;
-  width: 100%;
-}
-
-.nav-container {
+.sidenav {
+  width: 60px;
   height: 100%;
-  background: linear-gradient(180deg, #2c3e50 0%, #1a252f 100%);
+  background: #2c3e50;
   color: white;
+  transition: width 0.3s ease;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   direction: rtl;
-  padding: 16px 0;
 }
 
-.nav-header {
-  padding: 0 24px 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 16px;
+.sidenav.expanded {
+  width: 220px;
 }
 
-.nav-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #edf3f1;
-  margin: 0;
+.sidenav-header {
+  padding: 20px;
   text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.nav-list {
+.sidenav-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidenav.expanded .sidenav-header h2 {
+  opacity: 1;
+}
+
+.sidenav-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.sidenav-content ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  flex: 1;
 }
 
-.nav-item {
+.sidenav-content li {
   margin: 4px 0;
 }
 
-.nav-link {
+.sidenav-content a {
   display: flex;
   align-items: center;
-  padding: 12px 24px;
+  padding: 12px;
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   transition: all 0.2s ease;
-  font-size: 0.95rem;
+  justify-content: center;
 }
 
-.nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+.sidenav.expanded .sidenav-content a {
+  padding: 12px 20px;
+  justify-content: flex-start;
+}
+
+.sidenav-content a:hover {
+  background: rgba(255, 255, 255, 0.1);
   color: white;
 }
 
-.nav-link.active {
-  background-color: rgba(255, 255, 255, 0.15);
+.sidenav-content a.active {
+  background: rgba(255, 255, 255, 0.15);
   color: #00ffd0;
   border-right: 3px solid #00f2ff;
 }
 
-.nav-icon {
-  margin-left: 12px;
-  font-size: 24px;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.sidenav-content mat-icon {
   color: #00ffe5;
+  margin-left: 0;
   transition: all 0.2s ease;
 }
 
-.nav-text {
-  flex: 1;
+.sidenav.expanded .sidenav-content mat-icon {
+  margin-left: 12px;
 }
 
-.nav-footer {
-  padding: 16px 24px;
+.sidenav-content a:hover mat-icon {
+  color: white;
+  transform: scale(1.1);
+}
+
+.sidenav-content span {
+  display: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidenav.expanded .sidenav-content span {
+  display: block;
+}
+
+.sidenav:not(.expanded) .sidenav-content span {
+  display: none !important;
+}
+
+.sidenav-footer {
+  padding: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  margin-top: auto;
 }
 
 .user-info {
   display: flex;
   align-items: center;
-  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 12px;
+  justify-content: center;
 }
 
-.user-avatar {
+.sidenav.expanded .user-info {
+  justify-content: flex-start;
+}
+
+.avatar {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  margin-left: 12px;
-  background-color: #00d5ff;
+  background: #00d5ff;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #1a252f;
   font-weight: 600;
+  margin-left: 0;
 }
 
-.user-name {
-  font-size: 0.9rem;
-  font-weight: 500;
+.sidenav.expanded .avatar {
+  margin-left: 12px;
 }
 
-.logout-button {
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
+.user-info span {
+  display: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidenav.expanded .user-info span {
+  display: block;
+}
+
+.sidenav:not(.expanded) .user-info span {
+  display: none !important;
+}
+.sidenav:not(.expanded) .user-info .avatar {
+ border-radius: 50%;
+ height: 30px;
+ font-weight: 50px;
+}
+
+
+.logout-btn {
+  width: 100%;
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  width: 100%;
-  padding: 12px 16px;
+  background: none;
+  border: none;
+  color: white;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  justify-content: center;
 }
 
-.logout-button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+.sidenav.expanded .logout-btn {
+  padding: 12px 20px;
+  justify-content: flex-start;
 }
 
-.logout-button .nav-icon {
-  font-size: 20px;
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
-.logout-icon {
-  font-size: 18px;
-  font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
-
+.logout-btn mat-icon {
+  color: #00ffe5;
+  margin-left: 0;
+  transition: all 0.2s ease;
+  display: block;
 }
 
-.nav-link:hover .nav-icon {
-  color: #fff;
-  transform: scale(1.1);
+.sidenav.expanded .logout-btn mat-icon {
+  margin-left: 12px;
+  margin-right: -20px;
 }
 
+.logout-btn span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+   font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+}
 
-
+.sidenav:not(.expanded) .logout-btn span {
+  display: none !important;
+}

@@ -5,15 +5,20 @@ html, body, .sidenav-container, .content-wrapper, mat-toolbar, mat-nav-list, mat
 }
 
 .container {
-  padding: 24px;
+  margin: auto;
+  padding: 0;
   direction: rtl;
+  min-height: 100vh;
 }
 
 .header {
+  font-size: small;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
+  padding: 24px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .header h2 {
@@ -22,6 +27,7 @@ html, body, .sidenav-container, .content-wrapper, mat-toolbar, mat-nav-list, mat
 }
 
 .add-button {
+  font-size: small;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -42,6 +48,7 @@ html, body, .sidenav-container, .content-wrapper, mat-toolbar, mat-nav-list, mat
 }
 
 .list-container {
+  font-size: small;
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(44,62,80,0.1);
