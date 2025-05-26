@@ -1,5 +1,5 @@
 .sidenav {
-  width: 60px;
+  width: 65px;
   height: 100%;
   background: #2c3e50;
   color: white;
@@ -114,6 +114,7 @@
   align-items: center;
   margin-bottom: 12px;
   justify-content: center;
+  gap: 8px;
 }
 
 .sidenav.expanded .user-info {
@@ -121,6 +122,7 @@
 }
 
 .avatar {
+  min-width: 32px;
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -130,11 +132,8 @@
   justify-content: center;
   color: #1a252f;
   font-weight: 600;
-  margin-left: 0;
-}
-
-.sidenav.expanded .avatar {
-  margin-left: 12px;
+  font-size: 0.9rem;
+  flex-shrink: 0;
 }
 
 .user-info span {
@@ -142,6 +141,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 0.85rem;
 }
 
 .sidenav.expanded .user-info span {
@@ -151,12 +151,6 @@
 .sidenav:not(.expanded) .user-info span {
   display: none !important;
 }
-.sidenav:not(.expanded) .user-info .avatar {
- border-radius: 50%;
- height: 30px;
- font-weight: 50px;
-}
-
 
 .logout-btn {
   width: 100%;
@@ -182,14 +176,16 @@
 
 .logout-btn mat-icon {
   color: #00ffe5;
-  margin-left: 0;
+  margin: 0px;
   transition: all 0.2s ease;
-  display: block;
+  display: inline-block;
+  min-width: 24px;
 }
 
 .sidenav.expanded .logout-btn mat-icon {
   margin-left: 12px;
   margin-right: -20px;
+  display: inline-block;
 }
 
 .logout-btn span {
@@ -201,4 +197,23 @@
 
 .sidenav:not(.expanded) .logout-btn span {
   display: none !important;
+}
+
+.sidenav:not(.expanded) .logout-btn mat-icon {
+  display: block;
+  visibility: visible;
+}
+
+@media (max-width: 768px) {
+  .sidenav:not(.expanded) {
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .sidenav.expanded {
+    width: 220px;
+    opacity: 1;
+    visibility: visible;
+  }
 }

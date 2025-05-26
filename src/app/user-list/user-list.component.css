@@ -9,25 +9,34 @@ html, body, .sidenav-container, .content-wrapper, mat-toolbar, mat-nav-list, mat
   padding: 0;
   direction: rtl;
   min-height: 100vh;
+  margin-top: 64px;
+  transition: all 0.3s ease;
+  padding: 16px;
+  margin-right: 60px;
 }
-
+.container.collapsed{
+  margin-right: 60px;
+}
 .header {
   font-size: small;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px;
+  padding: 12px 16px;
   background: white;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 16px;
+  border-radius: 8px;
 }
 
 .header h2 {
   color: #2c3e50;
   margin: 0;
+  font-size: 1.1rem;
 }
 
 .add-button {
-  font-size: small;
+  font-size: 0.85rem;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -53,6 +62,7 @@ html, body, .sidenav-container, .content-wrapper, mat-toolbar, mat-nav-list, mat
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(44,62,80,0.1);
   overflow: hidden;
+  margin: 0;
 }
 
 .list-header {
@@ -63,6 +73,7 @@ html, body, .sidenav-container, .content-wrapper, mat-toolbar, mat-nav-list, mat
   border-bottom: 1px solid #e9ecef;
   font-weight: 600;
   color: #2c3e50;
+  font-size: 0.85rem;
 }
 
 .list-items {
@@ -77,6 +88,7 @@ html, body, .sidenav-container, .content-wrapper, mat-toolbar, mat-nav-list, mat
   border-bottom: 1px solid #e9ecef;
   align-items: center;
   transition: background-color 0.2s ease;
+  font-size: 0.85rem;
 }
 
 .list-item:hover {
@@ -157,6 +169,7 @@ html, body, .sidenav-container, .content-wrapper, mat-toolbar, mat-nav-list, mat
 .modal-header h3 {
   margin: 0;
   color: #2c3e50;
+  font-size: 1.1rem;
 }
 
 .close-button {
@@ -187,6 +200,7 @@ label {
   margin-bottom: 8px;
   color: #2c3e50;
   font-weight: 500;
+  font-size: 0.85rem;
 }
 
 input, select {
@@ -194,7 +208,7 @@ input, select {
   padding: 8px 12px;
   border: 1px solid #ced4da;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: 0.85rem;
   transition: border-color 0.2s ease;
   font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
 }
@@ -224,6 +238,7 @@ input:focus, select:focus {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
+  font-size: 0.85rem;
 }
 
 .cancel-button {
@@ -256,7 +271,7 @@ input:focus, select:focus {
   transform: none;
 }
 
-/* Set background style for the page */
+
 body {
   background-color: #f5f5f5;
   background-image: linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
@@ -264,4 +279,51 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+}
+
+@media (max-width: 768px) {
+  .container, .container.collapsed {
+    margin-right: 0;
+  }
+
+  .header h2 {
+    font-size: 1.1rem;
+  }
+
+  .add-button {
+    font-size: 0.85rem;
+  }
+
+  .list-header {
+    font-size: 0.85rem;
+  }
+
+  .list-item {
+    font-size: 0.85rem;
+  }
+
+  .action-button {
+    font-size: 0.85rem;
+  }
+
+  .modal-header h3 {
+    font-size: 1.1rem;
+  }
+
+  label {
+    font-size: 0.85rem;
+  }
+
+  input, select {
+    font-size: 0.85rem;
+  }
+
+  .cancel-button, .submit-button {
+    font-size: 0.85rem;
+  }
+
+  .modal-content {
+    width: 95%;
+    margin: 0 10px;
+  }
 }

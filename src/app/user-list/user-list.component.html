@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" [ngClass]="{'collapsed': isCollapsed}">
   <div class="header">
     <h2>لیست کاربران</h2>
     <button class="add-button" (click)="openModal()">

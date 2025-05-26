@@ -49,20 +49,22 @@
 /* Responsive styles */
 @media (max-width: 768px) {
   .sidenav {
-    width: 60px;
+    width: 0;
+    display: none;
   }
   
   .sidenav.open {
     width: 220px;
+    display: block;
   }
-  
+
   .content-wrapper {
-    margin-right: 60px;
+    margin-right: 0;
     padding: 16px;
   }
   
   .main-content.sidenav-open .content-wrapper {
-    margin-right: 220px;
+    margin-right: 0;
   }
   .user-panel-content {
     padding: 16px 8px;

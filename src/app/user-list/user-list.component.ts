@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgClass } from '@angular/common';
 
 interface User {
   id: number;
@@ -20,7 +20,7 @@ class UserFormModel {
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css'],
   standalone: true,
-  imports: [CommonModule, FormsModule]
+  imports: [CommonModule, FormsModule, NgClass]
 })
 export class UserListComponent implements OnInit {
   users: User[] = [];
@@ -28,7 +28,7 @@ export class UserListComponent implements OnInit {
   isEditing = false;
   userForm = new UserFormModel();
   editingUserId: number | null = null;
-
+  @Input() isCollapsed = false;
   constructor() {}
 
   ngOnInit() {

@@ -8,13 +8,22 @@ html, body, .sidenav-container, .content-wrapper, mat-toolbar, mat-nav-list, mat
   background: linear-gradient(90deg, #435e77 60%, #1a252f 100%);
   color: white;
   padding: 0 24px;
-  height: 64px;
+  height: 71px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   box-shadow: 0 2px 12px rgba(44,62,80,0.10);
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1001;
+  transition: all 0.3s ease;
+  margin-right: 220px; 
+}
+
+.toolbar.collapsed {
+  margin-right: 0px; 
 }
 
 .menu-button {
@@ -48,12 +57,13 @@ html, body, .sidenav-container, .content-wrapper, mat-toolbar, mat-nav-list, mat
 }
 
 .panel-title {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 600;
   margin: 0;
   text-align: center;
   flex-grow: 1;
   font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+  transition: all 0.3s ease;
 }
 
 .panel-title::after {
